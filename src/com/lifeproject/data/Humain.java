@@ -8,11 +8,30 @@ public class Humain {
     private String surname;
     private String name;
     private String history;
+    private Race race;
+
+    public Humain(boolean isMasculin, String surname, String name, String history, Race race) {
+        this.isMasculin = isMasculin;
+        this.surname = surname;
+        this.name = name;
+        this.history = history;
+        this.race = race;
+    }
 
     public Humain(String name, String surname, boolean isMasculin) {
         this.name = name;
         this.surname = surname;
         this.isMasculin = isMasculin;
+    }
+
+
+
+    public Race getRace() {
+        return race;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
     }
 
     public String getHistory() {
@@ -48,18 +67,6 @@ public class Humain {
     }
 
 
-
-    @Override
-    public String toString() {
-        return "Humain{" +
-                "isMasculin=" + isMasculin +
-                ", surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -69,7 +76,9 @@ public class Humain {
 
         if (isMasculin != humain.isMasculin) return false;
         if (surname != null ? !surname.equals(humain.surname) : humain.surname != null) return false;
-        return !(name != null ? !name.equals(humain.name) : humain.name != null);
+        if (name != null ? !name.equals(humain.name) : humain.name != null) return false;
+        if (history != null ? !history.equals(humain.history) : humain.history != null) return false;
+        return race == humain.race;
 
     }
 
@@ -78,6 +87,19 @@ public class Humain {
         int result = (isMasculin ? 1 : 0);
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (history != null ? history.hashCode() : 0);
+        result = 31 * result + (race != null ? race.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Humain{" +
+                "isMasculin=" + isMasculin +
+                ", surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", history='" + history + '\'' +
+                ", race=" + race +
+                '}';
     }
 }

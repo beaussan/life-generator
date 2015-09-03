@@ -25,5 +25,7 @@ public final class GeneratorUtil {
         }
         hum.setName(lsNoms.get(r.nextInt(lsNoms.size())));
         hum.setSurname(lsSurname.get(r.nextInt(lsSurname.size())));
+
+        hum.setRace(Race.values()[r.nextInt(Race.values().length)]);
     }
 }

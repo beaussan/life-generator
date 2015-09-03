@@ -34,16 +34,19 @@ public class Main {
             GeneratorUtil.randomizeNameOf(hum,nr,sr);
             hum.setHistory(History.getInstance().getHistory(hum));
             System.out.println(hum.getName() + " " + hum.getSurname() + " " + (hum.isMasculin()? "homme" : "femme"));
+            System.out.println(hum.getRace());
             System.out.println(hum.getHistory());
             System.out.println("____________");
 
             try {
-                Thread.sleep(500);
+                Thread.sleep(5);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
+
+        SavingUtil.writeToFile(hum);
 
 
 
