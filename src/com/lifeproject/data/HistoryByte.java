@@ -34,9 +34,9 @@ public class HistoryByte {
         out = out.replaceAll("\\{name\\}",hum.getName());
         out = out.replaceAll("\\{surname\\}",hum.getSurname());
         if (hum.isMasculin()){
-            out = out.replaceAll("(\\{)(.*)(\\\\)(.*)(\\})", "$2");
+            out = out.replaceAll("(\\{)([^\\}]*)(\\\\)([^\\}]*)(\\})", "$2");
         } else {
-            out = out.replaceAll("(\\{)(.*)(\\\\)(.*)(\\})", "$4");
+            out = out.replaceAll("(\\{)([^\\}]*)(\\\\)([^\\}]*)(\\})", "$4");
         }
         return out;
     }

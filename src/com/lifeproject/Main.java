@@ -32,11 +32,18 @@ public class Main {
 
         for (int i =0; i < 200; i++){
             GeneratorUtil.randomizeNameOf(hum,nr,sr);
-            System.out.println(hum);
+            hum.setHistory(History.getInstance().getHistory(hum));
+            System.out.println(hum.getName() + " " + hum.getSurname() + " " + (hum.isMasculin()? "homme" : "femme"));
+            System.out.println(hum.getHistory());
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
 
-        HistoryByte hb = new HistoryByte("Bonjour {surname} {homme\\femme}!");
-        System.out.println(hb.getStoryFor(hum));
 
 
     }
