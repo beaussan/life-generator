@@ -18,8 +18,8 @@ public class Main {
         UtilLog.setLevelGlobal(Level.ALL);
         UtilLog.setFormatter(new LogFormatter());
 
-        LOG.log(Level.INFO, "info"  );
-        LOG.log(Level.CONFIG, "cfg" );
+        LOG.log(Level.INFO, "info");
+        LOG.log(Level.CONFIG, "cfg");
         LOG.log(Level.FINE, "fine");
         LOG.log(Level.FINER, "finer");
         LOG.log(Level.FINEST, "finest");
