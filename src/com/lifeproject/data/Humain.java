@@ -7,11 +7,20 @@ public class Humain {
     private boolean isMasculin;
     private String surname;
     private String name;
+    private String history;
 
     public Humain(String name, String surname, boolean isMasculin) {
         this.name = name;
         this.surname = surname;
         this.isMasculin = isMasculin;
+    }
+
+    public String getHistory() {
+        return history;
+    }
+
+    public void setHistory(String history) {
+        this.history = history;
     }
 
     public boolean isMasculin() {

@@ -45,4 +45,25 @@ public class HistoryByte {
     public int getId() {
         return id;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        HistoryByte that = (HistoryByte) o;
+
+        if (id != that.id) return false;
+        if (story != null ? !story.equals(that.story) : that.story != null) return false;
+        return !(possibleOutcome != null ? !possibleOutcome.equals(that.possibleOutcome) : that.possibleOutcome != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (story != null ? story.hashCode() : 0);
+        result = 31 * result + (possibleOutcome != null ? possibleOutcome.hashCode() : 0);
+        return result;
+    }
 }
