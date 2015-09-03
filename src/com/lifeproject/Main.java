@@ -25,7 +25,7 @@ public class Main {
         LOG.log(Level.FINER, "finer");
         LOG.log(Level.FINEST, "finest");*/
 
-        Humain hum = new Humain("a","b",false);
+        Humain hum = new Humain("Nicolas","Paul",false);
 
         SurnameReader sr=new SurnameReader("/com/lifeproject/res/humain_prenom");
         //NameReader nr = new NameReader("/com/lifeproject/res/humain_nom");
@@ -35,7 +35,7 @@ public class Main {
             System.out.println(hum);
         }
 
-        HistoryByte hb = new HistoryByte("Bonjour {name} !");
+        HistoryByte hb = new HistoryByte("Bonjour {name} hahah {name} lol {name} hihi!");
         System.out.println(hb.getStoryFor(hum));
 
 
