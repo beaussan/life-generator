@@ -66,11 +66,11 @@ List<String>feminin=new ArrayList<String>();
         return masculin;
     }
 
-    public boolean isFeminin(){
-    	return false;
+    public boolean isFeminin(String name){
+    	return feminin.contains(name);
     }
 
-    public boolean isMasculin(){
-        return false;
+    public boolean isMasculin(String name){
+		return masculin.contains(name);
     }
 }

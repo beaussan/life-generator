@@ -32,6 +32,7 @@ public class HistoryByte {
     public String getStoryFor(Humain hum){
         String out = ""+story;
         out = out.replaceAll("\\{name\\}",hum.getName());
+        out = out.replaceAll("\\{race\\}",hum.getRace().toString());
         out = out.replaceAll("\\{surname\\}",hum.getSurname());
         if (hum.isMasculin()){
             out = out.replaceAll("(\\{)([^\\}]*)(\\\\)([^\\}]*)(\\})", "$2");

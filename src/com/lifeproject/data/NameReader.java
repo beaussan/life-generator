@@ -35,6 +35,7 @@ public class NameReader extends Reader {
 				ex.printStackTrace();
 			}
 		}
+		nom.remove(nom.size()-1);
 	}
 
 	public List<String> getNom(){
