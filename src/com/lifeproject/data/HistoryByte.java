@@ -21,7 +21,7 @@ public class HistoryByte {
 
     public String getStoryFor(Humain hum){
         String out = ""+story;
-        out = out.replaceAll("\{nom\}",hum.getSurname() + " " + hum.getName());
+        out = out.replaceAll("\\{name\\}",hum.getSurname() + " " + hum.getName());
         return out;
         // TODO implementer les genres
     }

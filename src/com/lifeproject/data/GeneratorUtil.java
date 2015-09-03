@@ -21,7 +21,7 @@ public final class GeneratorUtil {
             lsSurname = new ArrayList<>(sr.getMasculin());
         } else {
             hum.setIsMasculin(false);
-            lsSurname = new ArrayList<>(sr.getFeminun());
+            lsSurname = new ArrayList<>(sr.getFeminin());
         }
         hum.setName(lsNoms.get(r.nextInt(lsNoms.size())));
         hum.setSurname(lsSurname.get(r.nextInt(lsSurname.size())));
