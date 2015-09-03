@@ -28,14 +28,14 @@ public class Main {
         Humain hum = new Humain("Nicolas","Paul",false);
 
         SurnameReader sr=new SurnameReader("/com/lifeproject/res/humain_prenom");
-        //NameReader nr = new NameReader("/com/lifeproject/res/humain_nom");
+        NameReader nr = new NameReader("/com/lifeproject/res/humain_nom");
 
         for (int i =0; i < 200; i++){
-            //GeneratorUtil.randomizeNameOf(hum,nr,sr);
+            GeneratorUtil.randomizeNameOf(hum,nr,sr);
             System.out.println(hum);
         }
 
-        HistoryByte hb = new HistoryByte("Bonjour {name} hahah {name} lol {name} hihi!");
+        HistoryByte hb = new HistoryByte("Bonjour {surname} {homme\\femme}!");
         System.out.println(hb.getStoryFor(hum));
 
 

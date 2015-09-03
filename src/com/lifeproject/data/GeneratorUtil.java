@@ -14,7 +14,7 @@ public final class GeneratorUtil {
     public static void randomizeNameOf(Humain hum, NameReader nr, SurnameReader sr){
 
         Random r = new Random();
-        List<String> lsNoms = new ArrayList<>(nr.getNames());
+        List<String> lsNoms = new ArrayList<>(nr.getNom());
         List<String> lsSurname;
         if (r.nextBoolean()){
             hum.setIsMasculin(true);
