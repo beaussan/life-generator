@@ -11,9 +11,13 @@ import java.io.IOException;
  * Created by beaussan on 02/09/15.
  */
 public class SurnameReader extends Reader {
+    public static void main(String[] args) {
+		SurnameReader s=new SurnameReader("/com/lifeproject/res/humain_prenom");
+		System.out.println(s.getMasculin());
+		System.out.println(s.getFeminin());
+	}
 List<String>masculin=new ArrayList<String>();
 List<String>feminin=new ArrayList<String>();
-
 	public SurnameReader(String filename){
 		super(filename);
 		BufferedReader b=null;
@@ -53,23 +57,20 @@ List<String>feminin=new ArrayList<String>();
 		}
 	}
 	}
-    public List<String> getMasculin(){
-        return masculin;
-    }
 
     public List<String> getFeminin(){
         return feminin;
     }
 
-    public boolean isMasculin(){
-        return false;
+    public List<String> getMasculin(){
+        return masculin;
     }
+
     public boolean isFeminin(){
     	return false;
     }
-    public static void main(String[] args) {
-		SurnameReader s=new SurnameReader("/com/lifeproject/res/humain_prenom");
-		System.out.println(s.getMasculin());
-		System.out.println(s.getFeminin());
-	}
+
+    public boolean isMasculin(){
+        return false;
+    }
 }

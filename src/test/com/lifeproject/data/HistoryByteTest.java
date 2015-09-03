@@ -17,13 +17,13 @@ public class HistoryByteTest {
 
     @org.testng.annotations.Test
     public void testTestGetPossibleOutcome() throws Exception {
-
+        h1.getPossibleOutcome().contains(h2);
     }
 
     @org.testng.annotations.Test
     public void testTestAdd() throws Exception {
         h1.add(h2);
-
+        h1.getPossibleOutcome().contains(h2);
     }
 
     @org.testng.annotations.Test
