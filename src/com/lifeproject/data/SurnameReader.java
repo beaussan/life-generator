@@ -16,8 +16,10 @@ public class SurnameReader extends Reader {
 		System.out.println(s.getMasculin());
 		System.out.println(s.getFeminin());
 	}
-List<String>masculin=new ArrayList<String>();
-List<String>feminin=new ArrayList<String>();
+
+    private List<String>masculin=new ArrayList<String>();
+	private List<String>feminin=new ArrayList<String>();
+
 	public SurnameReader(String filename){
 		super(filename);
 		BufferedReader b=null;
@@ -37,11 +39,10 @@ List<String>feminin=new ArrayList<String>();
 			else{
 				String motajoutefem="";
 				for(int i =0;i<ligneCourante.length();i++){
-				if(ligneCourante.charAt(i)!='+'){
-					motajoutefem+=ligneCourante.charAt(i);
-				}
-
-			}
+                    if(ligneCourante.charAt(i)!='+'){
+                        motajoutefem+=ligneCourante.charAt(i);
+                    }
+			    }
 				feminin.add(motajoutefem);
 			}
 		}

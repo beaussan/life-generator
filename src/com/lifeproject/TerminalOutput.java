@@ -12,12 +12,12 @@ import java.awt.*;
 public class TerminalOutput {
 
 
-    private static final SurnameReader sr=new SurnameReader("/com/lifeproject/res/humain_prenom");
+    private static final SurnameReader sr= new SurnameReader("/com/lifeproject/res/humain_prenom");
     private static final NameReader nr = new NameReader("/com/lifeproject/res/humain_nom");
 
     public TerminalOutput(){
 
-        JConsole jc = new JConsole(100,40);
+        JConsole jc = new JConsole(100,30);
         Tools.showComponent(jc);
         jc.setCursorVisible(true);
         jc.setCursorBlink(true);
@@ -33,17 +33,48 @@ public class TerminalOutput {
         outHum(hum, jc);
 
         String in;
+        final String restart = "Recommencer";
+        final String save = "Sauvegarder";
+        final String quit = "Quitter";
+        final String changeName = "Changer le nom";
+        final String changeRace = "Changer la race";
         do {
-            in = jc.read(new String[]{"Recommencer", "Sauvegarder", "Quitter"});
-            if (in.equals("Recommencer")){
+            in = jc.read(new String[]{restart, changeName, changeRace, save, quit});
+            if (in.equals(restart)){
                 jc.clearScreen();
                 GeneratorUtil.randomizeNameOf(hum, nr, sr);
                 hum.setHistory(History.getInstance().getHistory(hum));
                 outHum(hum, jc);
-            } else if (in.equals("Sauvegarder")){
+            } else if (in.equals(save)){
                 SavingUtil.writeToFile(hum);
+            } else if (in.equals(changeName)){
+                jc.write("\nNom : ");
+                hum.setName(jc.read(15));
+                jc.write("\nPrénom : ");
+                hum.setSurname(jc.read(15));
+                hum.updateGender(sr);
+                hum.rewriteHistory();
+                jc.clearScreen();
+                outHum(hum,jc);
+            } else if (in.equals(changeRace)){
+                jc.write("\nRace : ");
+                Race[] tabRa = Race.values();
+                String[] stAsk = new String[tabRa.length];
+                for (int i =0; i < stAsk.length; i++){
+                    stAsk[i] = tabRa[i].name();
+                }
+                String inputRace = jc.read(stAsk);
+                for (int i =0; i < stAsk.length; i++){
+                    if (stAsk[i].equals(inputRace)){
+                        hum.setRace(tabRa[i]);
+                        break;
+                    }
+                }
+                hum.rewriteHistory();
+                jc.clearScreen();
+                outHum(hum,jc);
             }
-        } while (!in.equals("Quitter"));
+        } while (!in.equals(quit));
         System.exit(0);
 
     }

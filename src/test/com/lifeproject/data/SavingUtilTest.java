@@ -51,7 +51,7 @@ public class SavingUtilTest {
                         assertEquals("Sexe : Homme",sCurrentLine);
                         break;
                     case 4:
-                        assertEquals("Race : DWARF",sCurrentLine);
+                        assertEquals("Race : Nain",sCurrentLine);
                         break;
                     case 5:
                         assertEquals("Je suis un nain dans une cave et je suis mort.",sCurrentLine);

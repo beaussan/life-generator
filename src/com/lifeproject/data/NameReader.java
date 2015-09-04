@@ -11,8 +11,7 @@ import java.util.List;
  */
 public class NameReader extends Reader {
 
-	public String fileName;
-	public List<String> nom = new ArrayList<String>();
+	private List<String> nom = new ArrayList<String>();
 
 	public NameReader(String fileName){
 		super(fileName);
