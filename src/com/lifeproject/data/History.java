@@ -35,9 +35,12 @@ public class History {
 		debut.add(h17);
 		h1.add(h2);
 		h1.add(h3);
-		//h1.add(h4);
+		h1.add(h4);
 		h1.add(h5);
 		h2.add(h7);
+		h4.add(h16);
+		h4.add(h7);
+		h4.add(h6);
 		h17.add(h2);
 		h17.add(h3);
 		h17.add(h5);
