@@ -24,9 +24,7 @@ public class TerminalOutput {
 
         System.out.println(nr.getNom());
 
-
         Humain hum = new Humain("Nicolas","Paul",true);
-
 
         GeneratorUtil.randomizeNameOf(hum, nr, sr);
         hum.setHistory(History.getInstance().getHistory(hum));
@@ -40,39 +38,47 @@ public class TerminalOutput {
         final String changeRace = "Changer la race";
         do {
             in = jc.read(new String[]{restart, changeName, changeRace, save, quit});
-            if (in.equals(restart)){
-                jc.clearScreen();
-                GeneratorUtil.randomizeNameOf(hum, nr, sr);
-                hum.setHistory(History.getInstance().getHistory(hum));
-                outHum(hum, jc);
-            } else if (in.equals(save)){
-                SavingUtil.writeToFile(hum);
-            } else if (in.equals(changeName)){
-                jc.write("\nNom : ");
-                hum.setName(jc.read(15));
-                jc.write("\nPrénom : ");
-                hum.setSurname(jc.read(15));
-                hum.updateGender(sr);
-                hum.rewriteHistory();
-                jc.clearScreen();
-                outHum(hum,jc);
-            } else if (in.equals(changeRace)){
-                jc.write("\nRace : ");
-                Race[] tabRa = Race.values();
-                String[] stAsk = new String[tabRa.length];
-                for (int i =0; i < stAsk.length; i++){
-                    stAsk[i] = tabRa[i].name();
-                }
-                String inputRace = jc.read(stAsk);
-                for (int i =0; i < stAsk.length; i++){
-                    if (stAsk[i].equals(inputRace)){
-                        hum.setRace(tabRa[i]);
-                        break;
+            switch (in) {
+                case restart:
+                    jc.clearScreen();
+                    GeneratorUtil.randomizeNameOf(hum, nr, sr);
+                    hum.setHistory(History.getInstance().getHistory(hum));
+                    outHum(hum, jc);
+                    break;
+
+                case save:
+                    SavingUtil.writeToFile(hum);
+                    break;
+
+                case changeName:
+                    jc.write("\nNom : ");
+                    hum.setName(jc.read(15));
+                    jc.write("\nPrénom : ");
+                    hum.setSurname(jc.read(15));
+                    hum.updateGender(sr);
+                    hum.rewriteHistory();
+                    jc.clearScreen();
+                    outHum(hum, jc);
+                    break;
+
+                case changeRace:
+                    jc.write("\nRace : ");
+                    Race[] tabRa = Race.values();
+                    String[] stAsk = new String[tabRa.length];
+                    for (int i = 0; i < stAsk.length; i++) {
+                        stAsk[i] = tabRa[i].name();
                     }
-                }
-                hum.rewriteHistory();
-                jc.clearScreen();
-                outHum(hum,jc);
+                    String inputRace = jc.read(stAsk);
+                    for (int i = 0; i < stAsk.length; i++) {
+                        if (stAsk[i].equals(inputRace)) {
+                            hum.setRace(tabRa[i]);
+                            break;
+                        }
+                    }
+                    hum.rewriteHistory();
+                    jc.clearScreen();
+                    outHum(hum, jc);
+                    break;
             }
         } while (!in.equals(quit));
         System.exit(0);
