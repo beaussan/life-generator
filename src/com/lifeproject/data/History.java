@@ -17,6 +17,7 @@ public class History {
     List<HistoryByte> debut = new ArrayList<HistoryByte>();
 
 	private History() {
+        final HistoryByte empty = new HistoryByte("");
 		HistoryByte h1 = new HistoryByte("Il était une fois l'histoire de {surname} {name} un{\\e} jeune {race}, ");
 		HistoryByte h2 = new HistoryByte("{fils\\fille} de noble en quête de gloire et de pouvoir suite à la déchéance qu'a connu{\\e} sa famille suite à la révolte de leur peuple. ");
 		HistoryByte h3 = new HistoryByte("qui fût trouvé{\\e} sous le cadavre de sa mère et adopté{\\e} par la femme d'un mercenaire. Néanmoins, celle-ci mourut également par la peste, l'enfant dût alors prendre les armes pour subsister. ");
@@ -46,22 +47,33 @@ public class History {
         HistoryByte hb2 = new HistoryByte("{fils\\fille} d'un noble marchand, ");
         HistoryByte hb3 = new HistoryByte("n'ayant pas eu le courage de rejoindre l'armée, dû s'enfuir à travers champs pour arriver dans une famille ");
         HistoryByte hb4 = new HistoryByte("de sage, {il\\elle} vécut là-bas durant des années. Quelques années plus tard, parti{\\e} pour rejoindre la ville de Rivemorte pour rejoindre le temple de la vertu.");
-        HistoryByte hb5 = new HistoryByte("Dans ce temple {il\\elle} rejoint l'ordre des Paladins pour devenir un{\\e} grand{\\e} guerri{er\\ère}.");
+        HistoryByte hb5 = new HistoryByte("Dans ce temple {il\\elle} rejoint l'ordre des Paladins pour devenir un{\\e} grand{\\e} guerri{er\\ère} et un grand soigneur.");
         HistoryByte hb6 = new HistoryByte("Dans ce temple, {il\\elle} se rendit compte de la mascarade en place, voulut se révolter, {il\\elle} partit vagabonder dans les plaines. {Il\\Elle} décida quelques mois après de retrouver ses parents dans sa ville natale de Lairouge. {Il\\Elle} découvrit que ses parents ");
         HistoryByte hb7 = new HistoryByte("de paysan. {Il\\Elle} vécut à la ferme durant de nombreuses années. Un jour {il\\elle} revint dans sa ville natale de Lairouge et découvrit que ses parents");
         HistoryByte hb8 = new HistoryByte("étaient devenus pauvres et {il\\elle} a décidé{\\e} de leur porter en aide en travaillant dur, et devenant marchand à son tour. {Il\\Elle} est devenu{\\e} l'un{\\e} des marchand{s\\es} les plus renommé{s\\es} de la ville de  Lairouge et de tout le royaume.");
         HistoryByte hb9 = new HistoryByte("ont profité de la guerre pour s'enrichir et devenir les maîtres de la ville, achetant toute autorité. Ils avaient même le désir de renommer la ville en {name}....");
         HistoryByte hb10 = new HistoryByte("{surname} ne supporta pas ce changement et décida de partir pour ne plus jamais les revoir. {Il\\Elle} est parti{\\e} dans la ville de Ormfranc, la capitale du royaume pour recommencer sa vie… ");
         HistoryByte hb11 = new HistoryByte("{surname} décida de s'exiler et de vivre tel un{\\e} hermite jusqu'au jour où une troupe de barbares arriva et {le\\la} prit en tant qu'esclave. Jusqu'au jour où {il\\elle} essaya de se rebeller...");
+        HistoryByte hb12 = new HistoryByte("ayant du quitter ses parents durant la grande guerre du devenir un{\\\\e} guerri{er\\\\ère}.");
+        HistoryByte hb13 = new HistoryByte("Après de longs mois d'entrainemnet, il parta en guerre pour prouver son honeur.");
+        HistoryByte hb14 = new HistoryByte("Durant de nombreuses bataille il gagna en nautoriété et en grade dans l'armée. Il fus connus dans tout le royaume comme un guerier honorable et redoutable.");
+        HistoryByte hb15 = new HistoryByte("Horrifier par la guerre, il deserta la guerre, partit en plein champ de bataille, il fus rechercher dans tout le royaume pour avoir causer la mort de tout son régiment. Il esseya de retrouver ses parents mais ne pouvant pas aprocher une ville, esseya de ne pas se faire remarquer jusqu'au jour ou il fut contacter par un habitant des sous-terrains et lui proposa de devenir un garde dans se monde à part.");
+        HistoryByte hb16 = new HistoryByte("Il decida de devenir infirmier pour pouvoir aider le plus de gens possibles. ");
+        HistoryByte hb17 = new HistoryByte("Il integra les rangs de l'armé personelle du roi et fus conus dans toute la contrée. ");
+        HistoryByte hb18 = new HistoryByte("orifier par les blessures de la guerre, il decida d'ouvrir un centre de soins.");
 
         debut.add(hb1);
         hb1.add(hb2);
-        hb2.add(hb3);
+        hb2.add(hb3, hb12);
         hb3.add(hb4, hb7);
         hb4.add(hb5, hb6);
+        hb5.add(hb16, empty);
         hb6.add(hb8, hb9);
         hb7.add(hb8, hb8);
         hb9.add(hb10, hb11);
+        hb12.add(hb13,hb16);
+        hb13.add(hb14,hb15);
+        hb16.add(hb17,hb18);
 
     }
 
