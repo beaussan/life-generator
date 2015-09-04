@@ -1,5 +1,8 @@
 package com.lifeproject.data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by beaussan on 02/09/15.
  */
@@ -10,21 +13,39 @@ public class Humain {
     private String history;
     private Race race;
 
+    private List<HistoryByte> hbList;
+
     public Humain(boolean isMasculin, String surname, String name, String history, Race race) {
         this.isMasculin = isMasculin;
         this.surname = surname;
         this.name = name;
         this.history = history;
         this.race = race;
+        resetHistoryBytes();
     }
 
     public Humain(String name, String surname, boolean isMasculin) {
         this.name = name;
         this.surname = surname;
         this.isMasculin = isMasculin;
+        resetHistoryBytes();
     }
 
+    public void resetHistoryBytes(){
+        hbList = new ArrayList<>();
+    }
 
+    public boolean addHB(HistoryByte historyByte) {
+        return hbList.add(historyByte);
+    }
+
+    public void rewriteHistory(){
+        StringBuilder sb = new StringBuilder();
+        for (HistoryByte hb : hbList){
+            sb.append(hb.getStoryFor(this));
+        }
+        history = sb.toString();
+    }
 
     public Race getRace() {
         return race;
@@ -56,6 +77,10 @@ public class Humain {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public void updateGender(SurnameReader sr){
+        setIsMasculin(sr.isMasculin(surname));
     }
 
     public String getName() {
