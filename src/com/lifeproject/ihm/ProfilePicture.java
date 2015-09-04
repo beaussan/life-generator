@@ -14,6 +14,7 @@ public class ProfilePicture extends JPanel{
     private ImageIcon img;
 
     public ProfilePicture(Humain hum){
+        setBackground(new Color(40, 40, 40));
         setHum(hum);
     }
 

@@ -1,6 +1,7 @@
 package com.lifeproject.data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,30 +22,8 @@ public class HistoryByte {
         possibleOutcome = new ArrayList<>();
     }
 
-    public List<HistoryByte> getPossibleOutcome() {
-        return possibleOutcome;
-    }
-
-    public boolean add(HistoryByte historyByte) {
-        return possibleOutcome.add(historyByte);
-    }
-
-    public String getStoryFor(Humain hum){
-        String out = ""+story;
-        out = out.replaceAll("\\{name\\}",hum.getName());
-        out = out.replaceAll("\\{race\\}",hum.getRace().toString());
-        out = out.replaceAll("\\{surname\\}",hum.getSurname());
-        if (hum.isMasculin()){
-            out = out.replaceAll("(\\{)([^\\}]*)(\\\\)([^\\}]*)(\\})", "$2");
-        } else {
-            out = out.replaceAll("(\\{)([^\\}]*)(\\\\)([^\\}]*)(\\})", "$4");
-        }
-        return out;
-    }
-
-
-    public int getId() {
-        return id;
+    public boolean add(HistoryByte... historyByte) {
+        return possibleOutcome.addAll(Arrays.asList(historyByte));
     }
 
     @Override
@@ -58,6 +37,27 @@ public class HistoryByte {
         if (story != null ? !story.equals(that.story) : that.story != null) return false;
         return !(possibleOutcome != null ? !possibleOutcome.equals(that.possibleOutcome) : that.possibleOutcome != null);
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public List<HistoryByte> getPossibleOutcome() {
+        return possibleOutcome;
+    }
+
+    public String getStoryFor(Humain hum) {
+        String out = "" + story;
+        out = out.replaceAll("\\{name\\}", hum.getName());
+        out = out.replaceAll("\\{race\\}", hum.getRace().toString());
+        out = out.replaceAll("\\{surname\\}", hum.getSurname());
+        if (hum.isMasculin()) {
+            out = out.replaceAll("(\\{)([^\\}]*)(\\\\)([^\\}]*)(\\})", "$2");
+        } else {
+            out = out.replaceAll("(\\{)([^\\}]*)(\\\\)([^\\}]*)(\\})", "$4");
+        }
+        return out;
     }
 
     @Override
