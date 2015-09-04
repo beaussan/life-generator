@@ -27,14 +27,17 @@ public class IHM {
 		JButton b1= new JButton("Sauvergarder");
 		JButton b2 = new JButton("Changer");
 		JButton b3 = new JButton("Quitter");
-		JScrollBar sp = new JScrollBar();
-		ta.setBounds(20, 150, 440, 500);
 		ta.setBackground(new Color(34,34,34));
 		ta.setFont(new Font("Serif", Font.BOLD, 20));
 		ta.setForeground(Color.WHITE);
-		ta.setText("bonjour");
+		ta.setLineWrap(true);
+		ta.setTabSize(32);
+		ta.setText("ok");
+		JScrollPane sp = new JScrollPane(ta);
+		sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		sp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
-		sp.setBounds(460, 150, 20, 500);
+		sp.setBounds(20, 150, 440, 500);
 		sp.setBackground(new Color(34,34,34));
 		pan1.setLayout(null);
 		lab1.setBounds(200, 10,150,50);
@@ -48,11 +51,9 @@ public class IHM {
 		pan2.setLayout(null);
 		pan1.setBackground(new Color(34,34,34));
 
-	
 		pan1.add(lab1);
 		pan1.add(pan2);
 		pan1.add(sp);
-		pan1.add(ta);
 		pan2.add(b1);
 		pan2.add(b2);
 		pan2.add(b3);
@@ -67,8 +68,6 @@ public class IHM {
 		frame.setVisible(true);
 	}
 	public static void main(String[] args) {
-	     //Schedule a job for the event-dispatching thread:
-	     //creating and showing this application’s GUI.
 	     javax.swing.SwingUtilities.invokeLater(new Runnable() {
 	       public void run() {
 	         new IHM(null);
