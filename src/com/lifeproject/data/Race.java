@@ -8,6 +8,6 @@ public enum Race {
     DWARF,
     ELF,
     MORTIS,
-    HOBBIT,
+    GNOME,
     ORC;
 }

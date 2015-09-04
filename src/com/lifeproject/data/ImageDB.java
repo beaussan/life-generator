@@ -20,11 +20,45 @@ public class ImageDB {
 
     }
 
-
     private final String pathStart = "/com/lifeproject/res/images/";
     private final ImageIcon ELF_FEM = new ImageIcon(getClass().getResource(pathStart+"female-elf.png"));
+    private final ImageIcon ELF_MEN = new ImageIcon(getClass().getResource(pathStart+"male-elf.png"));
 
-    public static ImageIcon getImg(Humain hum){
-        return null;
+    private final ImageIcon ORC_FEM = new ImageIcon(getClass().getResource(pathStart+"female-orc.jpg"));
+    private final ImageIcon ORC_MEN = new ImageIcon(getClass().getResource(pathStart+"male-orc.jpg"));
+
+    private final ImageIcon GNOME_MEN = new ImageIcon(getClass().getResource(pathStart+"gnome.png"));
+
+    private final ImageIcon DWARF_MEN = new ImageIcon(getClass().getResource(pathStart+"nain.jpg"));
+
+    private final ImageIcon DEFAULT = new ImageIcon(getClass().getResource(pathStart+"default.jpg"));
+
+
+    public ImageIcon getImg(Humain hum){
+
+        Race ra = hum.getRace();
+        boolean isMale = hum.isMasculin();
+        if (ra == Race.ELF){
+            if (isMale){
+                return ELF_MEN;
+            } else {
+                return ELF_FEM;
+            }
+        } else if (ra == Race.ORC) {
+            if (isMale) {
+                return ORC_MEN;
+            } else {
+                return ORC_FEM;
+            }
+        } else if (ra == Race.DWARF){
+            if (isMale){
+                return DWARF_MEN;
+            }
+        } else if (ra == Race.GNOME){
+            if (isMale){
+                return GNOME_MEN;
+            }
+        }
+        return DEFAULT;
     }
 }
