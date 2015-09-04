@@ -81,7 +81,7 @@ public class TerminalOutput {
                     break;
             }
         } while (!in.equals(quit));
-        System.exit(0);
+        System.exit(0) ;
 
     }
 
