@@ -16,6 +16,7 @@ public class History {
 
 	private History() {
 		HistoryByte h1 = new HistoryByte("Il était une fois l'histoire de {surname} {name} un{\\e} jeune {race}, ");
+		HistoryByte h17 = new HistoryByte("Dans une contr�e lointaine vivait {surname} {name} un{\\e} {race}, ");
 		HistoryByte h2 = new HistoryByte("{fils\\fille} de noble en quête de gloire et de pouvoir suite à la déchéance qu'a connu{\\e} sa famille suite à la révolte de leur peuple. ");
 		HistoryByte h3 = new HistoryByte("qui fût trouvé{\\e} sous le cadavre de sa mère et adopté{\\e} par la femme d'un mercenaire. Néanmoins, celle-ci mourut également par la peste, l'enfant dût alors prendre les armes pour subsister. ");
 		HistoryByte h4 = new HistoryByte("né{\\e} d'une union sans amour d'un bandit et d'une villageoise, l'enfant ne connut pas son père et ne connut que les sévices de sa mère qui voyait en {lui\\elle} l'image de son aggresseur, {surname} dû fuguer très jeune, ");
@@ -31,11 +32,16 @@ public class History {
 		HistoryByte h15 = new HistoryByte("la haine lui traversait l'esprit, apprise par son père. Il n'était pas bon de croiser son chemin : femmes, enfants et nobles étaient les plus vulnérables face à cette terreur.");
 		HistoryByte h16 = new HistoryByte("{il\\elle} rejoignit une guilde de pillards et brigands assoiffés de sang, dont le seul but était de déstabiliser le monde, {surname} gravit petit à petit les échelons de celle-ci et devint plus tard le maître de la guilde en assassinant son prédécesseur. Plus personne ne semblait pouvoir arrêter {surname} {name}.");
 		debut.add(h1);
+		debut.add(h17);
 		h1.add(h2);
 		h1.add(h3);
 		//h1.add(h4);
 		h1.add(h5);
 		h2.add(h7);
+		h17.add(h2);
+		h17.add(h3);
+		h17.add(h5);
+		h17.add(h7);
 		h2.add(h10);
 		h5.add(h13);
 		h13.add(h15);
