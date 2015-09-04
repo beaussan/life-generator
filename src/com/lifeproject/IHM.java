@@ -23,10 +23,10 @@ public class IHM {
 		JLabel lab1 = new JLabel(name);
 		JPanel pan2 = new JPanel();
 		JTextArea ta = new JTextArea();
-		
 		JButton b1= new JButton("Sauvergarder");
 		JButton b2 = new JButton("Changer");
 		JButton b3 = new JButton("Quitter");
+		
 		ta.setBackground(new Color(34,34,34));
 		ta.setFont(new Font("Serif", Font.BOLD, 20));
 		ta.setForeground(Color.WHITE);
@@ -35,8 +35,6 @@ public class IHM {
 		ta.setText("ok");
 		JScrollPane sp = new JScrollPane(ta);
 		sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		sp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		
 		sp.setBounds(20, 150, 440, 500);
 		sp.setBackground(new Color(34,34,34));
 		pan1.setLayout(null);
@@ -50,21 +48,20 @@ public class IHM {
 		pan2.repaint();
 		pan2.setLayout(null);
 		pan1.setBackground(new Color(34,34,34));
-
+		
 		pan1.add(lab1);
 		pan1.add(pan2);
 		pan1.add(sp);
 		pan2.add(b1);
 		pan2.add(b2);
 		pan2.add(b3);
+		
 		frame.pack();
 		frame.setSize(new Dimension(700,700));
 		frame.setDefaultCloseOperation(3);
 		frame.setVisible(true);
-	
 		frame.getContentPane().add(pan1);
 		frame.setResizable(false);
-		
 		frame.setVisible(true);
 	}
 	public static void main(String[] args) {
