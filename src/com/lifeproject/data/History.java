@@ -42,17 +42,17 @@ public class History {
         h10.add(h11, h12);
         h7.add(h8, h9);
 
-        HistoryByte hb1 = new HistoryByte("Dans un pays for lointain, {name} {surname}, ");
-        HistoryByte hb2 = new HistoryByte("fils d'un noble marchant, ");
-        HistoryByte hb3 = new HistoryByte("n'ayant pas eu le courage de rejoindre l'armée, du s'enfuire à travers champs pour arriver dans une famille ");
-        HistoryByte hb4 = new HistoryByte("de sage, {il\\elle} vécu la bas durant des années. Quelques années plus tard, parti pour rejoindre la ville de Rivemorte pour rejoindre le temple de la vertue.");
-        HistoryByte hb5 = new HistoryByte("Dans ce temple il rejoins l'ordre des Paladin pour devenir un{\\e} grand guerri{er\\ère}.");
-        HistoryByte hb6 = new HistoryByte("Dans ce temple, {il\\elle} se rendi compte de la mascarade en place, voulu se révolter, {il\\elle} partit vagabonder dans les plaines. Il decida quelques mois après de retrouver ces parents dans sa ville natale de Lairouge. Il découvras que ces parents ");
-        HistoryByte hb7 = new HistoryByte("De paysant. Il vécu à la ferme durants de nombreuses années. Un jour il revint dans sa ville natale de Lairouge et découvras que ces parents");
-        HistoryByte hb8 = new HistoryByte("etais devenu pauvre et il a décidé de leur porter en aide en travaillant dur, et devenant marchant à son tour. Il est devenu l'un des marchant le plus renomé de la ville de  Lairouge et de tout le royaume.");
-        HistoryByte hb9 = new HistoryByte("On profiter de la guerre pour s'enrichire et devenir les maitres de la ville, achetant toute autorité. IL avais même le desir de renomais la ville en {name}....");
-        HistoryByte hb10 = new HistoryByte("{surname} Ne suporta pas se changemnet et décida de partir pour ne plus jamais les revoir. Il est partit dans la ville de Ormfranc, la capitale du royaume pour recomancer sa vie… ");
-        HistoryByte hb11 = new HistoryByte("{surname} décia de s'exiler et vivre tel un hermite jusqu'au jour ou une troupe de barbare arrive et le prènent en tant qu'esclave. Jusqu'au jour ou il esseya de se rebeller...");
+        HistoryByte hb1 = new HistoryByte("Dans un pays fort lointain, {name} {surname}, ");
+        HistoryByte hb2 = new HistoryByte("{fils\\fille} d'un noble marchand, ");
+        HistoryByte hb3 = new HistoryByte("n'ayant pas eu le courage de rejoindre l'armée, dû s'enfuir à travers champs pour arriver dans une famille ");
+        HistoryByte hb4 = new HistoryByte("de sage, {il\\elle} vécut là-bas durant des années. Quelques années plus tard, parti{\\e} pour rejoindre la ville de Rivemorte pour rejoindre le temple de la vertu.");
+        HistoryByte hb5 = new HistoryByte("Dans ce temple {il\\elle} rejoint l'ordre des Paladins pour devenir un{\\e} grand{\\e} guerri{er\\ère}.");
+        HistoryByte hb6 = new HistoryByte("Dans ce temple, {il\\elle} se rendit compte de la mascarade en place, voulut se révolter, {il\\elle} partit vagabonder dans les plaines. {Il\\Elle} décida quelques mois après de retrouver ses parents dans sa ville natale de Lairouge. {Il\\Elle} découvrit que ses parents ");
+        HistoryByte hb7 = new HistoryByte("de paysan. {Il\\Elle} vécut à la ferme durant de nombreuses années. Un jour {il\\elle} revint dans sa ville natale de Lairouge et découvrit que ses parents");
+        HistoryByte hb8 = new HistoryByte("étaient devenus pauvres et {il\\elle} a décidé{\\e} de leur porter en aide en travaillant dur, et devenant marchand à son tour. {Il\\Elle} est devenu{\\e} l'un{\\e} des marchand{s\\es} les plus renommé{s\\es} de la ville de  Lairouge et de tout le royaume.");
+        HistoryByte hb9 = new HistoryByte("ont profité de la guerre pour s'enrichir et devenir les maîtres de la ville, achetant toute autorité. Ils avaient même le désir de renommer la ville en {name}....");
+        HistoryByte hb10 = new HistoryByte("{surname} ne supporta pas ce changement et décida de partir pour ne plus jamais les revoir. {Il\\Elle} est parti{\\e} dans la ville de Ormfranc, la capitale du royaume pour recommencer sa vie… ");
+        HistoryByte hb11 = new HistoryByte("{surname} décida de s'exiler et de vivre tel un{\\e} hermite jusqu'au jour où une troupe de barbares arriva et {le\\la} prit en tant qu'esclave. Jusqu'au jour où {il\\elle} essaya de se rebeller...");
 
         debut.add(hb1);
         hb1.add(hb2);
