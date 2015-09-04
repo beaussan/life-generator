@@ -45,9 +45,11 @@ public class History {
     	Random r = new Random();
     	HistoryByte hb = debut.get(r.nextInt(debut.size()));
 		List<HistoryByte> ls;
+		hum.resetHistoryBytes();
     	do {
     		sb.append(hb.getStoryFor(hum));
 			ls = hb.getPossibleOutcome();
+			hum.addHB(hb);
 			if (ls.isEmpty()){
 				break;
 			}
